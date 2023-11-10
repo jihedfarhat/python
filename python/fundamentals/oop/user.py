@@ -26,3 +26,7 @@ user2.transfer_money(user1, 25)
 
 user1.display_user_balance()
 user2.display_user_balance()
+
+
+
+
