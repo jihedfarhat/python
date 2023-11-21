@@ -1,0 +1,45 @@
+-- Query 1: Create 3 new dojos
+INSERT INTO Dojos_and_Ninjas.dojos (name, created_at, updated_at)
+VALUES ('Dojo 1', NOW(), NOW()),
+       ('Dojo 2', NOW(), NOW()),
+       ('Dojo 3', NOW(), NOW());
+
+-- Query 2: Delete the 3 dojos you just created
+DELETE FROM Dojos_and_Ninjas.dojos
+WHERE id IN (LAST_INSERT_ID(), LAST_INSERT_ID() - 1, LAST_INSERT_ID() - 2);
+
+-- Query 3: Create 3 more dojos
+INSERT INTO Dojos_and_Ninjas.dojos (name, created_at, updated_at)
+VALUES ('Dojo 4', NOW(), NOW()),
+       ('Dojo 5', NOW(), NOW()),
+       ('Dojo 6', NOW(), NOW());
+
+-- Query 4: Create 3 ninjas that belong to the first dojo
+INSERT INTO Dojos_and_Ninjas.ninjas (first_name, last_name, age, created_at, jupdated_at, dojo_id)
+VALUES ('Ninja 1', 'Lastname 1', 20, NOW(), NOW(), 1),
+       ('Ninja 2', 'Lastname 2', 22, NOW(), NOW(), 1),
+       ('Ninja 3', 'Lastname 3', 25, NOW(), NOW(), 1);
+
+-- Query 5: Create 3 ninjas that belong to the second dojo
+INSERT INTO Dojos_and_Ninjas.ninjas (first_name, last_name, age, created_at, jupdated_at, dojo_id)
+VALUES ('Ninja 4', 'Lastname 4', 21, NOW(), NOW(), 2),
+       ('Ninja 5', 'Lastname 5', 23, NOW(), NOW(), 2),
+       ('Ninja 6', 'Lastname 6', 26, NOW(), NOW(), 2);
+
+-- Query 6: Create 3 ninjas that belong to the third dojo
+INSERT INTO Dojos_and_Ninjas.ninjas (first_name, last_name, age, created_at, jupdated_at, dojo_id)
+VALUES ('Ninja 7', 'Lastname 7', 19, NOW(), NOW(), 3),
+       ('Ninja 8', 'Lastname 8', 24, NOW(), NOW(), 3),
+       ('Ninja 9', 'Lastname 9', 27, NOW(), NOW(), 3);
+
+-- Query 7: Retrieve all the ninjas from the first dojo
+SELECT * FROM Dojos_and_Ninjas.ninjas
+WHERE dojo_id = 1;
+
+-- Query 8: Retrieve all the ninjas from the last dojo
+SELECT * FROM Dojos_and_Ninjas.ninjas
+WHERE dojo_id = (SELECT MAX(`id`) FROM Dojos_and_Ninjas.dojos);
+
+-- Query 9: Retrieve the last ninja's dojo
+SELECT `name` FROM `Dojos_and_Ninjas`.`dojos`
+WHERE `id` = (SELECT MAX(`dojo_id`) FROM `Dojos_and_Ninjas`.`ninjas`);
