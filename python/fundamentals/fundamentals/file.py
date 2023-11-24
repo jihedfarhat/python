@@ -1,86 +1,139 @@
-"""
-num1 = 42
-num2 = 2.3
-boolean = True
-string = 'Hello World'
-pizza_toppings = ['Pepperoni', 'Sausage', 'Jalepenos', 'Cheese', 'Olives']
-person = {'name': 'John', 'location': 'Salt Lake', 'age': 37, 'is_balding': False}
-fruit = ('blueberry', 'strawberry', 'banana')
-print(type(fruit))
-print(pizza_toppings[1])
-pizza_toppings.append('Mushrooms')
-print(person['name'])
-person['name'] = 'George'
-person['eye_color'] = 'blue'
-print(fruit[2])
+# variable declaration
+my_variable = True
 
-if num1 > 45:
-    print("It's greater")
+# log statement
+print("Hello, world!")
+
+# type check
+if isinstance(my_variable, bool):
+    print("my_variable is a boolean.")
+
+# length check
+my_list = [1, 2, 3]
+if len(my_list) == 3:
+    print("my_list has a length of 3.")
+
+# comment - single line
+
+# comment - multiline
+
+# Data Types
+
+# Primitive
+
+# Boolean
+my_boolean = True
+
+# Numbers
+my_number = 42
+
+# Strings
+my_string = "Hello, world!"
+
+# Composite
+
+# List
+# initialize
+my_list = [1, 2, 3]
+
+# access value
+print(my_list[0])
+
+# change value
+my_list[0] = 10
+
+# add value
+my_list.append(4)
+
+# delete value
+del my_list[1]
+
+# Tuples
+# initialize
+my_tuple = (1, 2, 3)
+
+# access value
+print(my_tuple[0])
+
+# change value (Not possible, tuples are immutable)
+
+# add value (Not possible, tuples are immutable)
+
+# delete value (Not possible, tuples are immutable)
+
+# Dictionary
+# initialize
+my_dict = {"key1": "value1", "key2": "value2"}
+
+# access value
+print(my_dict["key1"])
+
+# change value
+my_dict["key1"] = "new value1"
+
+# add value
+my_dict["key3"] = "value3"
+
+# delete value
+del my_dict["key2"]
+
+# conditional
+# if
+if my_boolean:
+    print("my_boolean is True.")
+
+# else if
+elif my_number > 0:
+    print("my_number is positive.")
+
+# else
 else:
-    print("It's lower")
+    print("my_boolean is False and my_number is non-positive.")
 
-if len(string) < 5:
-    print("It's a short word!")
-elif len(string) > 15:
-    print("It's a long word!")
-else:
-    print("Just right!")
+# for loop
+# start, stop, increment
+for i in range(0, 10, 2):
+    print(i)
 
-for x in range(5):
-    print(x)
-for x in range(2,5):
-    print(x)
-for x in range(2,10,3):
-    print(x)
-x = 0
-while(x < 5):
-    print(x)
-    x += 1
-
-pizza_toppings.pop()
-pizza_toppings.pop(1)
-
-print(person)
-person.pop('eye_color')
-print(person)
-
-for topping in pizza_toppings:
-    if topping == 'Pepperoni':
-        continue
-    print('After 1st if statement')
-    if topping == 'Olives':
+# break
+for i in range(0, 10):
+    if i == 5:
         break
+    print(i)
 
-def print_hello_ten_times():
-    for num in range(10):
-        print('Hello')
+# continue
+for i in range(0, 10):
+    if i == 5:
+        continue
+    print(i)
 
-print_hello_ten_times()
+# sequence
+my_sequence = [1, 2, 3]
+for item in my_sequence:
+    print(item)
 
-def print_hello_x_times(x):
-    for num in range(x):
-        print('Hello')
+# while loop
+# start
+i = 0
 
-print_hello_x_times(4)
+# stop
+while i < 10:
+    print(i)
+    i += 1
 
-def print_hello_x_or_ten_times(x = 10):
-    for num in range(x):
-        print('Hello')
+# increment
 
-print_hello_x_or_ten_times()
-print_hello_x_or_ten_times(4)
-"""
+# function
+# parameter
+def my_function(parameter1, parameter2):
+    print(parameter1, parameter2)
 
-"""
-Bonus section
-"""
+# argument
+my_function("Hello", "world!")
 
-# print(num3)
-# num3 = 72
-# fruit[0] = 'cranberry'
-# print(person['favorite_team'])
-# print(pizza_toppings[7])
-#   print(boolean)
-# fruit.append('raspberry')
-# fruit.pop(1)
+# return
+def add_numbers(a, b):
+    return a + b
 
+result = add_numbers(2, 3)
+print(result)
